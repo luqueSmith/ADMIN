@@ -266,7 +266,7 @@
         const data = await request("/api/applications", { method:"POST", headers:{"Content-Type":"application/json"}, body:JSON.stringify({ nickname:$("nickname").value, bio:$("bio").value, avatarUrl:selectedAvatar }) });
         localStorage.setItem(STORAGE_KEY, data.token); myApplication = data.application; renderMyProfile(); await loadPublicList(); showNotice($("globalNotice"), "✅ Tu postulación fue registrada correctamente.", "ok");
       } catch (error) { showNotice($("formNotice"), error.message, "error"); }
-      finally { setBusy($("submitBtn"), false, "ENVIAR POSTULACIÓN"); }
+      finally { setBusy($("submitBtn"), false, "ENVIAR"); }
     });
 
     $("openEditBtn").addEventListener("click", () => {
