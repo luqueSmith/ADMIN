@@ -4,324 +4,196 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="theme-color" content="#020617" />
-  <title>Postulación para moderador | MGG</title>
+  <title>Votación de moderadores | MGG</title>
   <style>
-    :root {
-      --bg:#020617; --panel:#081121; --panel2:#0b1629; --line:#1d2d48;
-      --text:#f8fafc; --muted:#8fa1bd; --blue:#2873ff; --blue2:#60a5fa;
-      --green:#34d399; --amber:#fbbf24; --red:#fb7185; --purple:#a78bfa;
-      --shadow:0 18px 60px rgba(0,0,0,.35);
+    :root{
+      --bg:#020617;--panel:#071225;--line:#1b2d49;--line2:#263b60;
+      --text:#f8fafc;--muted:#9bb0cf;--blue:#60a5fa;--blue2:#2563eb;
+      --shadow:0 18px 55px rgba(0,0,0,.34)
     }
-    *{box-sizing:border-box} html{scroll-behavior:smooth} body{margin:0;background:radial-gradient(circle at 50% -20%,#0d2452 0,#020617 42%,#01030a 100%);color:var(--text);font-family:Inter,system-ui,-apple-system,Segoe UI,Arial,sans-serif;min-height:100vh}
-    button,input,textarea{font:inherit}button{cursor:pointer}.wrap{max-width:980px;margin:auto;padding:18px 16px 42px}.hero{text-align:center;padding:2px 0 16px}.logo{width:100px;height:64px;object-fit:contain;margin:auto;filter:drop-shadow(0 8px 24px rgba(59,130,246,.38))}.hero h1{font-size:clamp(23px,4vw,34px);margin:10px 0 6px;font-weight:900;letter-spacing:-.8px}.hero p{margin:0;color:#9cb6df;font-size:15px;line-height:1.5}.grid{display:grid;gap:18px}.panel{background:linear-gradient(145deg,rgba(11,22,41,.96),rgba(5,12,25,.98));border:1px solid var(--line);border-radius:20px;padding:18px;box-shadow:var(--shadow)}.panel h2{font-size:16px;margin:0 0 15px;letter-spacing:.04em}.label{display:block;color:#84b8ff;font-weight:800;font-size:12px;letter-spacing:.06em;margin:0 0 7px}.field{width:100%;background:#03091a;border:1px solid #1c2d4d;border-radius:13px;padding:13px 14px;color:white;outline:none;transition:.2s}.field:focus{border-color:#3b82f6;box-shadow:0 0 0 3px rgba(59,130,246,.14)}textarea.field{resize:vertical;min-height:92px}.row{display:grid;gap:13px}.counter{font-size:11px;color:var(--muted);text-align:right;margin-top:4px}.avatar-box{display:flex;align-items:center;gap:14px;border:1px solid #17233b;background:#050c1c;border-radius:15px;padding:13px}.avatar{width:68px;height:68px;border-radius:50%;object-fit:cover;border:3px solid rgba(59,130,246,.36);background:#0f172a}.avatar.small{width:43px;height:43px;border-width:2px}.avatar.tiny{width:38px;height:38px;border-width:2px}.file{display:none}.btns{display:flex;flex-wrap:wrap;gap:8px}.btn{border:1px solid transparent;border-radius:12px;padding:11px 14px;font-weight:850;font-size:12px;letter-spacing:.02em;color:white;background:#15233a;transition:.2s}.btn:hover{transform:translateY(-1px);filter:brightness(1.08)}.btn.primary{background:linear-gradient(135deg,#1761ec,#2d7dff);box-shadow:0 11px 24px rgba(37,99,235,.22)}.btn.secondary{border-color:#2a3d5e;background:#101b2f}.btn.danger{border-color:rgba(244,63,94,.4);background:rgba(190,24,93,.18);color:#fda4af}.btn.good{border-color:rgba(16,185,129,.42);background:rgba(5,150,105,.15);color:#6ee7b7}.btn.warn{border-color:rgba(245,158,11,.42);background:rgba(217,119,6,.15);color:#fde68a}.btn.wide{width:100%;padding:14px}.help{font-size:12px;color:#7285a4;line-height:1.45;margin:7px 0 0}.notice{display:none;border-radius:13px;padding:12px 13px;margin:0 0 14px;font-size:13px;font-weight:650;line-height:1.45}.notice.show{display:block}.notice.error{background:rgba(190,24,93,.12);border:1px solid rgba(244,63,94,.34);color:#fda4af}.notice.ok{background:rgba(5,150,105,.12);border:1px solid rgba(16,185,129,.34);color:#6ee7b7}.notice.info{background:rgba(37,99,235,.12);border:1px solid rgba(96,165,250,.35);color:#bfdbfe}.section-title{display:flex;align-items:center;justify-content:space-between;gap:10px;margin:0 0 13px}.section-title h2{margin:0}.pill{display:inline-flex;align-items:center;border-radius:999px;padding:4px 8px;font-size:10px;font-weight:900;letter-spacing:.08em;border:1px solid #2b3b59;color:#b7c6dc;background:#0a1426}.pill.pending{color:#fde68a;border-color:rgba(245,158,11,.35);background:rgba(146,64,14,.16)}.pill.approved{color:#6ee7b7;border-color:rgba(16,185,129,.35);background:rgba(4,120,87,.15)}.pill.rejected{color:#fda4af;border-color:rgba(244,63,94,.35);background:rgba(159,18,57,.15)}.profile{display:flex;gap:14px;align-items:center}.profile h3{margin:0 0 5px;font-size:18px}.profile p{margin:3px 0;color:#9fb0c9;font-size:12px;line-height:1.4}.table-wrap{overflow-x:auto;border:1px solid #18253d;border-radius:14px}.table{width:100%;border-collapse:collapse;min-width:560px}.table th,.table td{text-align:left;padding:11px 12px;border-bottom:1px solid #15243b;font-size:12px;vertical-align:middle}.table th{color:#8cbcff;background:#071022;font-size:10px;letter-spacing:.08em}.table tr:last-child td{border-bottom:0}.name-cell{display:flex;align-items:center;gap:10px;font-weight:800}.bio{color:#9badc6;max-width:420px;white-space:pre-line}.meta{color:#8494af;white-space:nowrap}.cards{display:none;gap:10px}.candidate-card{border:1px solid #182841;background:#061022;border-radius:14px;padding:12px}.candidate-card .head{display:flex;align-items:center;gap:10px}.candidate-card h3{font-size:14px;margin:0}.candidate-card p{font-size:12px;color:#95a8c7;line-height:1.4;margin:8px 0 0;white-space:pre-line}.candidate-card small{display:block;color:#7184a3;margin-top:5px}.info-grid{display:grid;gap:10px;grid-template-columns:repeat(2,minmax(0,1fr));margin-top:17px}.mini{border:1px solid #17263e;background:#071124;border-radius:15px;padding:14px}.mini h3{font-size:13px;margin:0 0 7px;color:#b9d7ff}.mini p,.mini li{font-size:12px;color:#91a2bd;line-height:1.5}.mini p{margin:0}.mini ul{padding-left:17px;margin:0}.footer{text-align:center;color:#63738e;font-size:11px;margin-top:18px}.footer button{background:none;color:#87a7d9;border:0;text-decoration:underline;font-size:11px}.admin{display:none}.admin.show{display:block}.home.hide{display:none}.admin-head{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:10px}.admin-head h2{margin:0}.admin-table{min-width:900px}.admin-actions{display:flex;flex-wrap:wrap;gap:6px}.admin-actions .btn{padding:7px 9px;font-size:10px}.hidden{display:none!important}.split{display:grid;gap:12px;grid-template-columns:1fr auto}.modal-back{display:none;position:fixed;inset:0;background:rgba(0,0,0,.72);padding:18px;z-index:10;overflow:auto}.modal-back.show{display:grid;place-items:center}.modal{width:min(560px,100%);background:#071225;border:1px solid #263b60;border-radius:18px;padding:17px;box-shadow:var(--shadow)}.modal h2{margin:0 0 12px}.modal .top{display:flex;align-items:center;justify-content:space-between;gap:10px}.icon-btn{border:1px solid #253a5d;border-radius:9px;padding:6px 10px;background:#111f36;color:#c9d7eb}.empty{padding:23px;text-align:center;color:#8192ae;font-size:13px}.loader{display:inline-block;width:14px;height:14px;border:2px solid rgba(255,255,255,.32);border-top-color:white;border-radius:50%;animation:spin .8s linear infinite;vertical-align:-2px;margin-right:7px}@keyframes spin{to{transform:rotate(360deg)}}
-    @media(max-width:690px){.wrap{padding:10px 10px 28px}.panel{padding:14px;border-radius:16px}.logo{width:82px;height:52px}.hero{padding-top:0}.hero p{font-size:13px}.table-wrap.public-table{display:none}.cards{display:grid}.info-grid{grid-template-columns:1fr}.profile{align-items:flex-start}.avatar{width:61px;height:61px}.split{grid-template-columns:1fr}.btn{padding:10px 12px}.avatar-box{align-items:flex-start}.avatar-box .btns{margin-top:2px}}
+    *{box-sizing:border-box}
+    body{
+      margin:0;min-height:100vh;color:var(--text);
+      font-family:Inter,system-ui,-apple-system,Segoe UI,Arial,sans-serif;
+      background:radial-gradient(circle at 50% -15%,#102958 0,#020617 43%,#01030a 100%);
+    }
+    .wrap{max-width:1180px;margin:auto;padding:20px 16px 42px}
+    .hero{text-align:center;padding:2px 0 18px}
+    .logo{width:98px;height:66px;object-fit:contain;margin:auto;filter:drop-shadow(0 8px 24px rgba(59,130,246,.38))}
+    h1{font-size:clamp(24px,4vw,38px);margin:10px 0 7px;font-weight:900;letter-spacing:-.8px}
+    .hero p{margin:0 auto;color:#a9c5ee;line-height:1.55;max-width:760px;font-size:15px}
+    .banner{
+      margin:0 0 14px;padding:14px 16px;border:1px solid rgba(96,165,250,.34);
+      border-radius:15px;background:rgba(37,99,235,.12);color:#cfe4ff;
+      font-size:13px;line-height:1.5;text-align:center
+    }
+    .panel{
+      border:1px solid var(--line);border-radius:19px;overflow:hidden;
+      background:linear-gradient(145deg,rgba(11,22,41,.98),rgba(5,12,25,.99));
+      box-shadow:var(--shadow)
+    }
+    .panel-head{
+      display:flex;justify-content:space-between;align-items:center;gap:12px;
+      padding:16px 18px;border-bottom:1px solid var(--line)
+    }
+    .panel-head h2{font-size:16px;letter-spacing:.05em;margin:0}
+    .count{
+      display:inline-flex;padding:5px 9px;border:1px solid #294268;border-radius:999px;
+      color:#b9d8ff;background:#09172d;font-size:11px;font-weight:900;letter-spacing:.08em
+    }
+    .table-wrap{overflow-x:auto}
+    table{width:100%;border-collapse:collapse;min-width:760px}
+    th,td{padding:14px 15px;text-align:left;border-bottom:1px solid #172943;vertical-align:middle}
+    th{background:#071022;color:#81baff;font-size:11px;letter-spacing:.08em}
+    td{font-size:13px}
+    tr:last-child td{border-bottom:0}
+    .profile{display:flex;align-items:center;gap:12px;font-weight:850;min-width:245px}
+    .avatar{
+      width:48px;height:48px;border-radius:50%;object-fit:cover;background:#0f172a;
+      border:2px solid rgba(59,130,246,.50)
+    }
+    .bio{color:#a8c6f3;line-height:1.48;white-space:pre-line}
+    .date{color:#91add7;white-space:nowrap}
+    .cards{display:none;gap:11px;padding:12px}
+    .card{
+      border:1px solid #1a2d49;background:#061124;border-radius:15px;padding:13px
+    }
+    .card-head{display:flex;align-items:center;gap:11px}
+    .card h3{margin:0;font-size:15px}
+    .card small{display:block;margin-top:3px;color:#88a5cf;font-size:11px}
+    .card p{margin:10px 0 0;color:#a8c6f3;line-height:1.5;font-size:13px;white-space:pre-line}
+    .empty{padding:28px;text-align:center;color:#9bb0cf}
+    .footer{text-align:center;margin-top:16px;color:#6f85a6;font-size:11px}
+    @media(max-width:720px){
+      .wrap{padding:12px 10px 28px}.hero{padding-top:0}.logo{width:84px;height:56px}
+      .hero p{font-size:13px}.banner{font-size:12px;padding:12px}.panel-head{padding:14px}
+      .table-wrap{display:none}.cards{display:grid}
+    }
   </style>
 </head>
 <body>
   <main class="wrap">
-    <section class="home" id="homeView">
-      <header class="hero">
-        <img class="logo" src="https://github.com/luqueSmith/MGG/blob/main/img/Logo_mgg.png?raw=true" alt="Logo MGG" />
-        <h1>POSTULACIÓN PARA MODERADOR</h1>
-        <p>Regístrate para participar en la selección de moderadores del grupo.</p>
-      </header>
+    <header class="hero">
+      <img class="logo" src="https://github.com/luqueSmith/MGG/blob/main/img/Logo_mgg.png?raw=true" alt="Logo MGG" />
+      <h1>VOTACIÓN PARA ELEGIR MODERADORES</h1>
+      <p>Las postulaciones han finalizado. Revisa el perfil de cada candidato y participa en la encuesta fijada dentro del grupo.</p>
+    </header>
 
-      <div id="globalNotice" class="notice"></div>
+    <div class="banner">
+      📢 Esta página es informativa. El voto se realiza exclusivamente en la encuesta oficial del grupo para que todos los miembros puedan participar.
+    </div>
 
-      <section class="panel" id="myProfilePanel" hidden>
-        <div class="section-title"><h2>TU PERFIL DE POSTULANTE</h2><span class="pill" id="myStatus">PENDIENTE</span></div>
-        <div class="profile">
-          <img id="myAvatar" class="avatar" alt="Foto de perfil" />
-          <div>
-            <h3 id="myNickname"></h3>
-            <p id="myBio"></p>
-            <p id="myDate"></p>
-          </div>
-        </div>
-        <div class="btns" style="margin-top:14px">
-          <button class="btn primary" id="openEditBtn">EDITAR MI PERFIL</button>
-        </div>
-      </section>
-
-      <section class="panel" id="formPanel">
-        <h2>REGISTRA TU POSTULACIÓN</h2>
-        <div id="formNotice" class="notice"></div>
-        <form id="applicationForm">
-          <div class="row">
-            <div>
-              <label class="label" for="nickname">NOMBRE O APODO CON EL QUE TE RECONOCEN EN EL GRUPO *</label>
-              <input class="field" id="nickname" maxlength="30" autocomplete="nickname" placeholder="Ejemplo: Smith Luque" required />
-            </div>
-            <div>
-              <label class="label" for="bio">BIOGRAFÍA O DESCRIPCIÓN <span style="color:#8092ad">(opcional)</span></label>
-              <textarea class="field" id="bio" maxlength="200" placeholder="Cuéntale brevemente al grupo por qué deseas postular."></textarea>
-              <div class="counter"><span id="bioCount">0</span>/200</div>
-            </div>
-            <div>
-              <label class="label">FOTO DE PERFIL <span style="color:#8092ad">(opcional)</span></label>
-              <div class="avatar-box">
-                <img id="avatarPreview" class="avatar" alt="Vista previa" />
-                <div>
-                  <div class="btns">
-                    <label class="btn secondary" for="avatarInput">SUBIR FOTO</label>
-                    <button type="button" class="btn danger" id="removeAvatarBtn">QUITAR FOTO</button>
-                  </div>
-                  <p class="help">Acepta JPG, PNG o WEBP de hasta 3 MB. Si no colocas una foto, aparecerá el logo del juego.</p>
-                </div>
-              </div>
-              <input class="file" type="file" id="avatarInput" accept="image/jpeg,image/png,image/webp" />
-            </div>
-            <button class="btn primary wide" id="submitBtn" type="submit">ENVIAR POSTULACIÓN</button>
-          </div>
-        </form>
-      </section>
-
-      <div class="info-grid">
-        <section class="mini"><h3>¿QUÉ HACE UN MODERADOR?</h3><p>Ayuda a mantener el orden, hace respetar las reglas y contribuye a que la comunidad funcione correctamente.</p></section>
-        <section class="mini"><h3>BENEFICIOS</h3><ul><li>Promocionar contenido relacionado con el juego.</li><li>Compartir servicios.</li><li>Publicar ventas de cuentas respetando las reglas.</li><li>Formar parte del equipo de moderación.</li></ul></section>
+    <section class="panel">
+      <div class="panel-head">
+        <h2>POSTULANTES REGISTRADOS</h2>
+        <span class="count" id="count">9 CANDIDATOS</span>
       </div>
 
-      <section class="panel" style="margin-top:18px">
-        <div class="section-title"><h2>POSTULANTES REGISTRADOS</h2><span class="pill" id="publicCount">0 REGISTRADOS</span></div>
-        <div class="table-wrap public-table">
-          <table class="table">
-            <thead><tr><th>PERFIL</th><th>DESCRIPCIÓN</th><th>FECHA</th></tr></thead>
-            <tbody id="publicTableBody"></tbody>
-          </table>
-        </div>
-        <div class="cards" id="publicCards"></div>
-        <div class="empty" id="publicEmpty">Todavía no hay postulantes registrados.</div>
-      </section>
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr><th>PERFIL</th><th>DESCRIPCIÓN</th><th>FECHA</th></tr>
+          </thead>
+          <tbody id="tableBody"></tbody>
+        </table>
+      </div>
 
-      <div class="footer">MGG · Postulación para moderadores · <button id="goAdminBtn">Acceso privado de administrador</button></div>
+      <div class="cards" id="cards"></div>
+      <div class="empty" id="empty" hidden>No fue posible cargar la lista de candidatos.</div>
     </section>
 
-    <section class="admin" id="adminView">
-      <header class="hero">
-        <img class="logo" src="https://github.com/luqueSmith/MGG/blob/main/img/Logo_mgg.png?raw=true" alt="Logo MGG" />
-        <h1>PANEL DE ADMINISTRACIÓN</h1>
-        <p>Revisa, aprueba o rechaza las postulaciones registradas.</p>
-      </header>
-      <div id="adminNotice" class="notice"></div>
-      <section class="panel" id="adminLoginPanel">
-        <h2>INGRESO PRIVADO</h2>
-        <form id="adminLoginForm" class="split">
-          <input type="password" class="field" id="adminPassword" placeholder="Contraseña administrativa" autocomplete="current-password" required />
-          <button type="submit" class="btn primary" id="loginBtn">INGRESAR</button>
-        </form>
-        <p class="help">La contraseña se valida únicamente en el servidor y no se guarda dentro de esta página.</p>
-      </section>
-      <section class="panel hidden" id="adminDashboard">
-        <div class="admin-head">
-          <div><h2>POSTULACIONES REGISTRADAS</h2><p class="help" id="adminCount"></p></div>
-          <div class="btns"><button class="btn secondary" id="refreshAdminBtn">ACTUALIZAR</button><button class="btn danger" id="logoutBtn">CERRAR SESIÓN</button><button class="btn secondary" id="backHomeBtn">VOLVER</button></div>
-        </div>
-        <div class="table-wrap" style="margin-top:14px">
-          <table class="table admin-table">
-            <thead><tr><th>POSTULANTE</th><th>FECHA</th><th>ESTADO</th><th>CONEXIÓN</th><th>ACCIONES</th></tr></thead>
-            <tbody id="adminTableBody"></tbody>
-          </table>
-        </div>
-      </section>
-    </section>
+    <footer class="footer">Comunidad MGG · Selección de moderadores</footer>
   </main>
 
-  <div class="modal-back" id="editModal">
-    <section class="modal">
-      <div class="top"><h2>EDITAR MI PERFIL</h2><button class="icon-btn" id="closeEditBtn">✕</button></div>
-      <div id="editNotice" class="notice"></div>
-      <form id="editForm" class="row">
-        <div><label class="label" for="editNickname">NOMBRE O APODO *</label><input class="field" id="editNickname" maxlength="30" required /></div>
-        <div><label class="label" for="editBio">BIOGRAFÍA O DESCRIPCIÓN</label><textarea class="field" id="editBio" maxlength="200"></textarea><div class="counter"><span id="editBioCount">0</span>/200</div></div>
-        <div><label class="label">FOTO DE PERFIL</label><div class="avatar-box"><img id="editAvatarPreview" class="avatar" alt="Vista previa" /><div class="btns"><label class="btn secondary" for="editAvatarInput">CAMBIAR FOTO</label><button type="button" class="btn danger" id="removeEditAvatarBtn">USAR FOTO PREDETERMINADA</button></div></div><input class="file" type="file" id="editAvatarInput" accept="image/jpeg,image/png,image/webp" /></div>
-        <button type="submit" class="btn primary wide" id="saveEditBtn">GUARDAR CAMBIOS</button>
-      </form>
-    </section>
-  </div>
-
   <script>
-    // IMPORTANTE: reemplaza este texto con la URL pública de tu Cloudflare Worker.
-    // Ejemplo: https://admin-mgg-api.tuusuario.workers.dev
     const API_BASE = "https://admin-mgg-api.luquesmith537.workers.dev";
-
     const DEFAULT_AVATAR = "https://github.com/luqueSmith/MGG/blob/main/img/Logo_mgg.png?raw=true";
-    const STORAGE_KEY = "mgg_moderator_edit_token";
-    const ADMIN_KEY = "mgg_admin_session";
-    let selectedAvatar = "";
-    let editAvatar = "";
-    let myApplication = null;
 
-    const $ = (id) => document.getElementById(id);
-    const apiReady = () => API_BASE.startsWith("https://") && !API_BASE.includes("PEGA_AQUI");
+    // Solo se muestran los postulantes elegidos para la encuesta.
+    const SELECTED_NAMES = [
+      "Andrew Habrahamshon",
+      "Jhon",
+      "WarleryMGG",
+      "Jhoswel Jeigg",
+      "Lichi",
+      "Isaac",
+      "Cris",
+      "Freddy",
+      "NovalDark"
+    ];
 
-    function showNotice(target, text, type = "info") {
-      target.className = `notice show ${type}`;
-      target.textContent = text;
+    // Respaldo para mostrar la tabla incluso si el servidor tarda en responder.
+    const FALLBACK = [
+      {nickname:"Andrew Habrahamshon",bio:"Porque soy piola xd",date:"2026-06-11T20:49:00-05:00"},
+      {nickname:"Jhon",bio:"para mejor la experiencia en el juego.",date:"2026-06-11T20:04:00-05:00"},
+      {nickname:"WarleryMGG",bio:"Postulo para poner orden y para obviamente velar por el grupo, ya me conocen.",date:"2026-06-11T19:21:00-05:00"},
+      {nickname:"Jhoswel Jeigg",bio:"Quiero ser mod uwu",date:"2026-06-11T19:14:00-05:00"},
+      {nickname:"Lichi",bio:"Hola, soy lichi, me gustaría ser mod para evitar malos ratos y ayudar a quien necesite, no soy conflictivo ni nada de ese estilo, gracias.",date:"2026-06-11T19:13:00-05:00"},
+      {nickname:"Isaac",bio:"Me gustaría postularme para ayudar a controlar el grupo y mantener un ambiente sano. Mi objetivo es evitar la toxicidad, reducir conflictos y contribuir a que la comunidad sea un lugar más tranquilo",date:"2026-06-11T19:07:00-05:00"},
+      {nickname:"Cris",bio:"Poner orden, evitar peleas absurdas, que respeten las reglas y sobre todo que haya respeto entre los miembros",date:"2026-06-11T19:07:00-05:00"},
+      {nickname:"Freddy",bio:"Nunca fui moderador así que ojalá poder serlo aquí sinceramente eso nomás",date:"2026-06-11T19:05:00-05:00"},
+      {nickname:"NovalDark",bio:"Hacks mgg, voy a postular con el fin de poner orden en el grupo. Es necesario ya que últimamente hay peleas y discusiones entre los miembros.. se llegó a fomentar el odio y a muchos les disgustaron.",date:"2026-06-11T19:03:00-05:00"}
+    ];
+
+    const $ = id => document.getElementById(id);
+    function key(name){return String(name||"").trim().toLowerCase()}
+    function formatDate(value){
+      try{return new Date(value).toLocaleString("es-PE",{dateStyle:"short",timeStyle:"short"})}
+      catch{return "Fecha no disponible"}
     }
-    function clearNotice(target) { target.className = "notice"; target.textContent = ""; }
-    function setBusy(button, busy, text) { button.disabled = busy; button.innerHTML = busy ? '<span class="loader"></span>PROCESANDO...' : text; }
-    function statusLabel(status) { return status === "approved" ? "APROBADO" : status === "rejected" ? "RECHAZADO" : "PENDIENTE"; }
-    function statusClass(status) { return status === "approved" ? "approved" : status === "rejected" ? "rejected" : "pending"; }
-    function formatDate(value) { try { return new Date(value).toLocaleString("es-PE", { dateStyle:"short", timeStyle:"short" }); } catch { return "Fecha no disponible"; } }
 
-    async function request(path, options = {}) {
-      if (!apiReady()) throw new Error("Primero debes colocar la URL de tu Cloudflare Worker dentro del archivo index.html.");
-      const response = await fetch(`${API_BASE.replace(/\/$/, "")}${path}`, options);
-      let data = {};
-      try { data = await response.json(); } catch { data = {}; }
-      if (!response.ok) throw new Error(data.error || "No se pudo completar la solicitud.");
-      return data;
-    }
+    function render(list){
+      $("tableBody").textContent="";
+      $("cards").textContent="";
+      $("count").textContent=`${list.length} CANDIDATOS`;
+      $("empty").hidden=!!list.length;
 
-    async function processImage(file) {
-      if (!file) return "";
-      if (!["image/jpeg", "image/png", "image/webp"].includes(file.type)) throw new Error("Solo puedes subir imágenes JPG, PNG o WEBP.");
-      if (file.size > 3 * 1024 * 1024) throw new Error("La imagen supera el límite de 3 MB.");
-      const source = await readAsDataURL(file);
-      const image = await loadImage(source);
-      const max = 360;
-      const scale = Math.min(1, max / Math.max(image.width, image.height));
-      const canvas = document.createElement("canvas");
-      canvas.width = Math.max(1, Math.round(image.width * scale));
-      canvas.height = Math.max(1, Math.round(image.height * scale));
-      canvas.getContext("2d").drawImage(image, 0, 0, canvas.width, canvas.height);
-      let quality = .86;
-      let output = canvas.toDataURL("image/jpeg", quality);
-      while (output.length > 760000 && quality > .45) { quality -= .08; output = canvas.toDataURL("image/jpeg", quality); }
-      if (output.length > 850000) throw new Error("La imagen sigue siendo demasiado pesada. Utiliza una foto más pequeña.");
-      return output;
-    }
-    function readAsDataURL(file) { return new Promise((resolve, reject) => { const reader = new FileReader(); reader.onload = () => resolve(reader.result); reader.onerror = () => reject(new Error("No se pudo leer la imagen.")); reader.readAsDataURL(file); }); }
-    function loadImage(src) { return new Promise((resolve, reject) => { const img = new Image(); img.onload = () => resolve(img); img.onerror = () => reject(new Error("La imagen no se pudo procesar.")); img.src = src; }); }
+      for(const item of list){
+        const avatar=item.avatarUrl||DEFAULT_AVATAR;
+        const bio=item.bio||"Sin descripción.";
+        const date=formatDate(item.date);
 
-    async function loadPublicList() {
-      try {
-        const list = await request("/api/applications");
-        renderPublicList(list);
-      } catch (error) {
-        showNotice($("globalNotice"), error.message, "error");
-      }
-    }
-    function renderPublicList(list) {
-      $("publicCount").textContent = `${list.length} REGISTRADOS`;
-      $("publicTableBody").textContent = "";
-      $("publicCards").textContent = "";
-      $("publicEmpty").style.display = list.length ? "none" : "block";
-      for (const item of list) {
-        const row = document.createElement("tr");
-        const userCell = document.createElement("td");
-        const nameWrap = document.createElement("div"); nameWrap.className = "name-cell";
-        const img = document.createElement("img"); img.className = "avatar small"; img.src = item.avatarUrl || DEFAULT_AVATAR; img.alt = "Foto";
-        const name = document.createElement("span"); name.textContent = item.nickname;
-        nameWrap.append(img, name); userCell.append(nameWrap);
-        const bio = document.createElement("td"); bio.className = "bio"; bio.textContent = item.bio || "Sin descripción.";
-        const date = document.createElement("td"); date.className = "meta"; date.textContent = formatDate(item.date);
-        row.append(userCell, bio, date); $("publicTableBody").append(row);
+        const tr=document.createElement("tr");
+        tr.innerHTML=`
+          <td><div class="profile"><img class="avatar" src="${escapeAttr(avatar)}" alt="Foto de perfil"><span>${escapeHtml(item.nickname)}</span></div></td>
+          <td class="bio">${escapeHtml(bio)}</td>
+          <td class="date">${escapeHtml(date)}</td>`;
+        $("tableBody").append(tr);
 
-        const card = document.createElement("article"); card.className = "candidate-card";
-        const head = document.createElement("div"); head.className = "head";
-        const cimg = img.cloneNode(); cimg.className = "avatar small";
-        const text = document.createElement("div"); const h3 = document.createElement("h3"); h3.textContent = item.nickname; const small = document.createElement("small"); small.textContent = formatDate(item.date); text.append(h3, small); head.append(cimg, text);
-        const p = document.createElement("p"); p.textContent = item.bio || "Sin descripción."; card.append(head, p); $("publicCards").append(card);
+        const card=document.createElement("article");
+        card.className="card";
+        card.innerHTML=`
+          <div class="card-head">
+            <img class="avatar" src="${escapeAttr(avatar)}" alt="Foto de perfil">
+            <div><h3>${escapeHtml(item.nickname)}</h3><small>${escapeHtml(date)}</small></div>
+          </div>
+          <p>${escapeHtml(bio)}</p>`;
+        $("cards").append(card);
       }
     }
 
-    function importTokenFromUrl() {
-      const url = new URL(location.href);
-      const token = url.searchParams.get("token");
-      if (token) { localStorage.setItem(STORAGE_KEY, token); url.searchParams.delete("token"); history.replaceState({}, "", url.pathname + url.search + url.hash); }
+    function escapeHtml(value){
+      return String(value??"").replace(/[&<>"']/g,ch=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#039;"}[ch]));
     }
-    async function loadMyProfile() {
-      const token = localStorage.getItem(STORAGE_KEY);
-      if (!token || !apiReady()) return;
-      try {
-        const data = await request(`/api/applications/me?token=${encodeURIComponent(token)}`);
-        myApplication = data.application;
-        renderMyProfile();
-      } catch {
-        localStorage.removeItem(STORAGE_KEY);
-      }
+    function escapeAttr(value){return escapeHtml(value)}
+
+    async function start(){
+      let result=FALLBACK;
+      try{
+        const response=await fetch(`${API_BASE}/api/applications`,{cache:"no-store"});
+        if(response.ok){
+          const live=await response.json();
+          const liveMap=new Map(live.map(item=>[key(item.nickname),item]));
+          result=SELECTED_NAMES.map(name=>{
+            const stored=liveMap.get(key(name));
+            const backup=FALLBACK.find(x=>key(x.nickname)===key(name));
+            return stored ? {...backup,...stored,nickname:name} : backup;
+          }).filter(Boolean);
+        }
+      }catch{}
+      render(result);
     }
-    function renderMyProfile() {
-      if (!myApplication) return;
-      $("myProfilePanel").hidden = false;
-      $("formPanel").hidden = true;
-      $("myAvatar").src = myApplication.avatarUrl || DEFAULT_AVATAR;
-      $("myNickname").textContent = myApplication.nickname;
-      $("myBio").textContent = myApplication.bio || "Sin descripción.";
-      $("myDate").textContent = `Postulado: ${formatDate(myApplication.date)}`;
-      $("myStatus").textContent = statusLabel(myApplication.status);
-      $("myStatus").className = `pill ${statusClass(myApplication.status)}`;
-    }
-
-    $("bio").addEventListener("input", (event) => $("bioCount").textContent = event.target.value.length);
-    $("editBio").addEventListener("input", (event) => $("editBioCount").textContent = event.target.value.length);
-    $("avatarPreview").src = DEFAULT_AVATAR; $("editAvatarPreview").src = DEFAULT_AVATAR;
-    $("avatarInput").addEventListener("change", async (event) => { try { selectedAvatar = await processImage(event.target.files[0]); $("avatarPreview").src = selectedAvatar || DEFAULT_AVATAR; clearNotice($("formNotice")); } catch (error) { event.target.value=""; showNotice($("formNotice"), error.message, "error"); } });
-    $("removeAvatarBtn").addEventListener("click", () => { selectedAvatar = ""; $("avatarInput").value = ""; $("avatarPreview").src = DEFAULT_AVATAR; });
-
-    $("applicationForm").addEventListener("submit", async (event) => {
-      event.preventDefault(); clearNotice($("formNotice")); setBusy($("submitBtn"), true, "ENVIAR POSTULACIÓN");
-      try {
-        const data = await request("/api/applications", { method:"POST", headers:{"Content-Type":"application/json"}, body:JSON.stringify({ nickname:$("nickname").value, bio:$("bio").value, avatarUrl:selectedAvatar }) });
-        localStorage.setItem(STORAGE_KEY, data.token); myApplication = data.application; renderMyProfile(); await loadPublicList(); showNotice($("globalNotice"), "✅ Tu postulación fue registrada correctamente.", "ok");
-      } catch (error) { showNotice($("formNotice"), error.message, "error"); }
-      finally { setBusy($("submitBtn"), false, "ENVIAR"); }
-    });
-
-    $("openEditBtn").addEventListener("click", () => {
-      if (!myApplication) return;
-      $("editNickname").value = myApplication.nickname; $("editBio").value = myApplication.bio || ""; $("editBioCount").textContent = $("editBio").value.length;
-      editAvatar = myApplication.avatarUrl === DEFAULT_AVATAR ? "" : myApplication.avatarUrl; $("editAvatarPreview").src = myApplication.avatarUrl || DEFAULT_AVATAR; clearNotice($("editNotice")); $("editModal").classList.add("show");
-    });
-    $("closeEditBtn").addEventListener("click", () => $("editModal").classList.remove("show"));
-    $("editModal").addEventListener("click", (event) => { if (event.target === $("editModal")) $("editModal").classList.remove("show"); });
-    $("editAvatarInput").addEventListener("change", async (event) => { try { editAvatar = await processImage(event.target.files[0]); $("editAvatarPreview").src = editAvatar || DEFAULT_AVATAR; clearNotice($("editNotice")); } catch (error) { event.target.value=""; showNotice($("editNotice"), error.message, "error"); } });
-    $("removeEditAvatarBtn").addEventListener("click", () => { editAvatar=""; $("editAvatarInput").value=""; $("editAvatarPreview").src=DEFAULT_AVATAR; });
-    $("editForm").addEventListener("submit", async (event) => {
-      event.preventDefault(); clearNotice($("editNotice")); setBusy($("saveEditBtn"), true, "GUARDAR CAMBIOS");
-      try {
-        const token = localStorage.getItem(STORAGE_KEY) || "";
-        const data = await request("/api/applications/me/update", { method:"PUT", headers:{"Content-Type":"application/json","X-Auth-Token":token}, body:JSON.stringify({ nickname:$("editNickname").value, bio:$("editBio").value, avatarUrl:editAvatar }) });
-        myApplication = data.application; renderMyProfile(); await loadPublicList(); showNotice($("editNotice"), "✅ Perfil actualizado correctamente.", "ok"); setTimeout(() => $("editModal").classList.remove("show"), 700);
-      } catch (error) { showNotice($("editNotice"), error.message, "error"); }
-      finally { setBusy($("saveEditBtn"), false, "GUARDAR CAMBIOS"); }
-    });
-
-    function goAdmin() { $("homeView").classList.add("hide"); $("adminView").classList.add("show"); location.hash = "admin"; if (sessionStorage.getItem(ADMIN_KEY)) openAdminDashboard(); }
-    function goHome() { $("homeView").classList.remove("hide"); $("adminView").classList.remove("show"); history.replaceState({}, "", location.pathname + location.search); }
-    $("goAdminBtn").addEventListener("click", goAdmin); $("backHomeBtn").addEventListener("click", goHome);
-    $("adminLoginForm").addEventListener("submit", async (event) => {
-      event.preventDefault(); clearNotice($("adminNotice")); setBusy($("loginBtn"), true, "INGRESAR");
-      try { const data = await request("/api/admin/auth", { method:"POST", headers:{"Content-Type":"application/json"}, body:JSON.stringify({passcode:$("adminPassword").value}) }); sessionStorage.setItem(ADMIN_KEY, data.token); $("adminPassword").value=""; await openAdminDashboard(); }
-      catch (error) { showNotice($("adminNotice"), error.message, "error"); }
-      finally { setBusy($("loginBtn"), false, "INGRESAR"); }
-    });
-    async function adminRequest(path, options = {}) { const token = sessionStorage.getItem(ADMIN_KEY) || ""; options.headers = {...(options.headers||{}), Authorization:`Bearer ${token}`}; return request(path, options); }
-    async function openAdminDashboard() { try { $("adminLoginPanel").classList.add("hidden"); $("adminDashboard").classList.remove("hidden"); await loadAdminList(); } catch (error) { sessionStorage.removeItem(ADMIN_KEY); $("adminLoginPanel").classList.remove("hidden"); $("adminDashboard").classList.add("hidden"); showNotice($("adminNotice"), error.message, "error"); } }
-    async function loadAdminList() { const list = await adminRequest("/api/admin/applications"); renderAdminList(list); }
-    function renderAdminList(list) {
-      $("adminCount").textContent = `${list.length} postulaciones registradas.`; $("adminTableBody").textContent = "";
-      for (const item of list) {
-        const row = document.createElement("tr");
-        const user = document.createElement("td"); const wrap = document.createElement("div"); wrap.className="name-cell"; const img=document.createElement("img"); img.className="avatar tiny"; img.src=item.avatarUrl||DEFAULT_AVATAR; const text=document.createElement("div"); const strong=document.createElement("strong"); strong.textContent=item.nickname; const desc=document.createElement("div"); desc.className="help"; desc.textContent=item.bio||"Sin descripción."; text.append(strong,desc); wrap.append(img,text); user.append(wrap);
-        const date=document.createElement("td"); date.className="meta"; date.textContent=formatDate(item.date);
-        const status=document.createElement("td"); const badge=document.createElement("span"); badge.className=`pill ${statusClass(item.status)}`; badge.textContent=statusLabel(item.status); status.append(badge);
-        const ip=document.createElement("td"); ip.textContent=item.ipLocked?"Bloqueada":"Liberada";
-        const actions=document.createElement("td"); const box=document.createElement("div"); box.className="admin-actions";
-        box.append(adminButton("APROBAR","good",()=>changeStatus(item.id,"approved")),adminButton("RECHAZAR","warn",()=>changeStatus(item.id,"rejected")),adminButton("LIBERAR IP","secondary",()=>unlockIp(item.id)),adminButton("NUEVO ENLACE","secondary",()=>regenLink(item.id)),adminButton("ELIMINAR","danger",()=>deleteApplication(item.id,item.nickname)));
-        actions.append(box); row.append(user,date,status,ip,actions); $("adminTableBody").append(row);
-      }
-    }
-    function adminButton(text, type, handler) { const btn=document.createElement("button"); btn.className=`btn ${type}`; btn.textContent=text; btn.addEventListener("click",handler); return btn; }
-    async function changeStatus(id,status){ try{ await adminRequest(`/api/admin/applications/${encodeURIComponent(id)}`,{method:"PUT",headers:{"Content-Type":"application/json"},body:JSON.stringify({status})}); await loadAdminList(); await loadPublicList(); showNotice($("adminNotice"),"Estado actualizado.","ok"); }catch(error){showNotice($("adminNotice"),error.message,"error");} }
-    async function unlockIp(id){ try{ await adminRequest(`/api/admin/applications/${encodeURIComponent(id)}/unlock-ip`,{method:"POST"}); await loadAdminList(); showNotice($("adminNotice"),"Conexión liberada. Ahora podrá registrarse otra postulación desde esa red.","ok"); }catch(error){showNotice($("adminNotice"),error.message,"error");} }
-    async function regenLink(id){ try{ const data=await adminRequest(`/api/admin/applications/${encodeURIComponent(id)}/regen-token`,{method:"POST"}); await navigator.clipboard.writeText(data.editUrl); showNotice($("adminNotice"),"Nuevo enlace privado copiado al portapapeles. Envíalo únicamente al postulante correspondiente.","ok"); }catch(error){showNotice($("adminNotice"),error.message,"error");} }
-    async function deleteApplication(id,name){ if(!confirm(`¿Eliminar la postulación de ${name}?`))return; try{ await adminRequest(`/api/admin/applications/${encodeURIComponent(id)}`,{method:"DELETE"}); await loadAdminList(); await loadPublicList(); showNotice($("adminNotice"),"Postulación eliminada.","ok"); }catch(error){showNotice($("adminNotice"),error.message,"error");} }
-    $("refreshAdminBtn").addEventListener("click",()=>loadAdminList().catch(error=>showNotice($("adminNotice"),error.message,"error")));
-    $("logoutBtn").addEventListener("click",()=>{sessionStorage.removeItem(ADMIN_KEY);$("adminDashboard").classList.add("hidden");$("adminLoginPanel").classList.remove("hidden");showNotice($("adminNotice"),"Sesión cerrada.","info");});
-
-    (async function init(){ importTokenFromUrl(); if(location.hash==="#admin")goAdmin(); if(!apiReady()){ showNotice($("globalNotice"),"⚠️ Falta conectar la página con el servidor. Abre index.html y reemplaza https://admin-mgg-api.luquesmith537.workers.dev por la URL pública de tu Cloudflare Worker.","error"); return; } await Promise.all([loadPublicList(),loadMyProfile()]); })();
+    start();
   </script>
 </body>
 </html>
